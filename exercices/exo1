@@ -1,0 +1,14 @@
+Math.pow(2, 31)
+int max = 2147483647;
+max
+max + 1
+int min = max + 1;
+max + min - 1000000000
+0x7FFFFFFFFFFFFFFFL
+$7 + 1
+0xf + 1
+045
+0x45
+true |false
+true & false
+(true & false) | (true & true)
