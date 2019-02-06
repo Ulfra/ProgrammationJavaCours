@@ -1,0 +1,41 @@
+Exercices de programmation du 5 novembre 2018
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Exercice 1 :
+----------
+Tester l'arithmétique sur les types flottants
+	=> les types primitifs float, double
+        => les limites (exposant, précision)
+        => le 0.0 et le -0.0
+        => les classes enveloppes (wrapper) java.lang.Float et java.lang.Double
+        => les notions de NaN = Not a Number et d'infini (Infinity)
+	=> les conversions entre types flottants
+        => les expressions avec l'arithmétique flottante + - * / %
+        => la division par 0 (et par -0.0)
+        => les dépassements des limites
+        => les conversions entre types entiers et flottants
+        => des expressions mixtes avec arithmétique entière et flottante
+
+
+
+Exercice 2 : Résolution d'une équation du premier degré dans "R" : ax + b = 0.0
+----------
+=> demander les coefficients "réels" (a, b) à l'utilisateur
+=> résoudre l'équation pour déterminer x (si c'est possible...)
+=> vérifier la solution obtenue
+
+
+
+Exercice 3 : Résolution d'une équation du second degré dans "R" : ax2 + bx + c = 0.0
+----------
+=> demander les coefficients "réels" (a, b, c) à l'utilisateur
+=> résoudre l'équation pour déterminer x (si c'est possible...)
+   (méthode du discriminant...)
+=> vérifier les solutions obtenues
+
+
+
+
+Bien tester vos programmes...
+
+

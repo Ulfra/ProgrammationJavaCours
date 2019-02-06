@@ -1,0 +1,78 @@
+Exercices de programmation du 15 octobre 2018
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+Exercice 1 :
+----------
+Ecrire un programme qui demande le nom de l'utilisateur, son prénom, 
+son année de naissance en gérant au mieux la saisie.
+
+Afficher alors son état civil avec l'age : Prénom Nom (nn ans)
+
+
+Exercice 2 :
+----------
+Permutation de deux variables :
+
+	int n; // les deux variables à permuter
+        int p;
+
+        n = 1;
+        p = 2;
+        // afficher les valeurs des variables avant permutation
+        
+        // coder l'algorithme de permutation
+
+        // afficher les valeurs des variables après permutation
+
+Votre algorithme de permutation est-il valable pour d'autres types que int ?  
+Conclusion ?
+
+
+Exercice 3 :
+----------
+Permutation circulaire de trois variables a, b , c :
+
+     a ---> b ---> c ---> a
+
+     => déclarer et initialiser les variables
+     => afficher les valeurs des variables avant permutation
+        
+     => coder l'algorithme de permutation circulaire
+     => afficher les valeurs des variables après permutation 
+ 
+
+Exercice 4 :
+----------
+Ecrire un programme qui demande deux entiers à l'utilisateur.
+Si la saisie est incorrecte alors le programme s'arrête avec un message d'erreur explicite ;
+si la saisie est correcte, il calcule et affiche le minimum des deux entiers entrés.
+
+
+Exercice 5 :
+----------
+Ecrire un programme qui demande le nom de l'utilisateur, son prénom, 
+son année de naissance en gérant au mieux la saisie.
+
+En cas d'erreur, un message compréhensible est affiché à l'utilisateur
+et le programme s'arrête (pas de message système).
+
+Si tout est correct alors afficher l'état civil de l'utilisateur : Prénom NOM (nn ans)
+en faisant en sorte que : 
+     +  les premières lettres des mots du prénom soient en majuscules et les autres lettres en minuscules
+     +  les lettres des mots du nom soient des MAJUSCULES
+
+Exemples :  Virginie DURAND (21 ans)
+            Pierre Marie CARNIVOLI (20 ans)
+            Valérie-Anne GISCARD D'ESTAING (64 ans)
+
+
+Exercice 6 :
+----------
+Même problème que l'exercice 4 mais pour le minimum de 4 entiers entrés,
+
+Essayer de trouver un algorithme qui minimise le nombre de niveaux d'imbrication
+entrainé par la gestion des erreurs.
+
+
+

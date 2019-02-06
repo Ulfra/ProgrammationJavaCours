@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"info1.methodes","l":"IntModifiable"}]
