@@ -5,6 +5,7 @@
 package info1.outils;
 
 import java.util.Scanner;
+import info1.methodes.Parametrage;
 
 /**
  * Utilitaires de manipulations de tableaux de flottants double précision
@@ -63,6 +64,70 @@ public class ManipTableaux {
      }
 
      /**
+      * Indice de la premiere occurrence de la valeur minimale
+      * @param aParcourir tableau dont on cherche le minimum
+      * @return <ul>
+      * <li> 0 si aParcourir ne contient que des NaN </li>
+      * <li> indice de -0.0 si la valeur minimale est 0 (et que 0.0 est rencontré avant)</li>
+      * <li> indice de la premiere occurrence du minimum </li>
+      * </ul>
+      * @throws IllegalArgumentException si aParcourir est vide
+      */
+     public static int indiceMin(double[] aParcourir) 
+     throws IllegalArgumentException {
+     
+        int indice;  // indice du minimum
+	double min;  // minimum du tableau
+
+	if (aParcourir.length == 0) {
+	    throw new IllegalArgumentException("Pas de min dans le vide");
+	}
+        // else : au moins une valeur
+	indice = 0;
+	min = aParcourir[indice];
+	for (int i = 1; i < aParcourir.length; i++) {
+	    if (Double.compare(aParcourir[i], min) < 0) {
+		indice = i;
+		min = aParcourir[indice];
+	    }
+	}
+	return indice;
+     }
+
+     /**
+      * Indice de la premiere occurrence de la valeur maximale
+      * @param aParcourir tableau dont on cherche le maximum
+      * @return <ul>
+      * <li> 0 si aParcourir ne contient que des NaN </li>
+      * <li> indice de 0.0 si la valeur maximale est 0 (et que -0.0 est rencontré avant)</li>
+      * <li> indice de la premiere occurrence du maximum </li>
+      * </ul>
+      * @throws IllegalArgumentException si aParcourir est vide
+      */
+     public static int indiceMax(double[] aParcourir)
+     throws IllegalArgumentException {
+	
+	return 0; // Stub
+     }
+     
+     /**
+      * Moyenne arithmètique du tableau aParcourir
+      * @param aParcourir tableau dont on cherche la moyenne
+      * @return <ul>
+      * <li> NaN si aParcourir ne contient que des NaN </li>
+      * <li> la moyenne de aParcourir sans tenir compte des NaN</li>
+      * </ul>
+      * @throws IllegalArgumentException si aParcourir est vide
+      *
+      */
+     public static double moyenne(double[] aParcourir)
+     throws IllegalArgumentException {
+ 
+         return 0; // Stub
+     }
+     
+
+     /**
       * <ul>
       * <li>Entrée console d'une série de flottants mémorisée dans un tableau</li>
       * <li>Sortie texte d'un tableau au format [ elt0 elt1 ... eltk ]</li>
@@ -82,10 +147,13 @@ public class ManipTableaux {
 	 int nbElem;			// Taille du tableau
 	 int parcours;                  // Indice de parcours
 
+         /* serie vide pour tests */
+         double[] serieVide = {};
+
 	 /* Indicateur statistique */
 	 double min,                    // Minimum du tableau
 	        max,
-		moyenne;
+		moyn;
 
 	 boolean nok;                    // Vérification de saisie incorrecte
 
@@ -117,22 +185,12 @@ public class ManipTableaux {
          System.out.println("serie :\n " + enTexte(serie));
 
          /* Calcul d'indicateurs statistiques : min, max, moyenne arithmétique */
-         // min = max = serie[0];
-         min = Double.POSITIVE_INFINITY; // Valeur la plus grande 
-         max = Double.NEGATIVE_INFINITY; // Valeur la plus petite 
-         for (int i = 0; i < serie.length; i++) {
-             if (min > serie[i]) {
-                 min = serie[i];
-             } else if (max < serie[i]) {
-                 max = serie[i];
-	     }
-	 }
-         
-         /* Cas d'un tableau de NaN */
-         if (min > max) {
-             min = max = Double.NaN;
-         }
+         min = serie[indiceMin(serie)];
+         max = serie[indiceMax(serie)];
+         moyn = moyenne(serie);
 
-         System.out.println("Min = " + min + " et Max = " + max);
+         System.out.println("Min = " + min + ", Max = " + max + " et Moyenne = " + moyn);
+
+//#types tableaux incompatibles#         Parametrage.permut2Cases(serie, 0, 1);
      }
 }

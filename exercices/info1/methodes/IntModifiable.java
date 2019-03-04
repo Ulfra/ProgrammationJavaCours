@@ -39,4 +39,9 @@ public class IntModifiable {
     public void setValeur(int nouvelleValeur) {
         valeur = nouvelleValeur;
     }
+
+    @Override
+    public String toString() {
+        return Integer.toString(valeur);
+    }
 }

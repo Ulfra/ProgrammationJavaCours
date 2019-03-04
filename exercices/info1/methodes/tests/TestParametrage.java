@@ -4,8 +4,8 @@
  */
 package info1.methodes.tests;
 
-import info1.methodes.Parametrage;
 import info1.methodes.IntModifiable;
+import info1.methodes.Parametrage;
 
 /**
  * Tests unitaires des méthodes de info1.methodes.Parametrage
@@ -117,57 +117,61 @@ public class TestParametrage {
     }
 
     /**
-     * Tests unitaires de Parametrage.permut2IntModifiable(IntModifiable,
-     * IntModifiables)
+     * Tests unitaires de Parametrage.permut2IntModifiable(IntModifiable, IntModifiable)
      */
     public static void testPermut2IntModifiable() {
 
         IntModifiable n,
                       p;
 
-	n = new IntModifiable(1);
-	p = new IntModifiable(2);
+        n = new IntModifiable(1);
+        p = new IntModifiable(2);
 
-        
+        System.out.println("Avant Permut2IntModifiable : n = " + n
+                           + " et p = " + p);
+
         Parametrage.permut2IntModifiable(n, p);
 
+        System.out.println("Apres Permut2IntModifiable : n = " + n
+                           + " et p = " + p);
+
         if (n.getValeur() == 2 && p.getValeur() == 1) {
-            System.out.println("Succes de Permut2IntModifiableV1");
+            System.out.println("Succes de Permut2IntModifiable");
         } else {
-            System.out.println("Echec de Permut2IntModifiableV1");
+            System.out.println("Echec de Permut2IntModifiable");
         }
     }
 
     /**
-     * Tests unitaires de Parametrage.permut2Cases()
+     * Test unitaires de Parametrage.permut2Cases(int[], int, int)
      */
     public static void testPermut2Cases() {
-        
-        int[] suite = {12, 45, 0, -56, -666};
-        
-        Parametrage.permut2Cases(suite, 1, 4);        
-        
-        if (suite[1] == -666 && suite[4] == 45) {
-            System.out.println("Succes de permut2Cases ! Bravot !");
-        } else {
-            System.out.println("Echec de permut2Cases !");
-        }
-	
-        Parametrage.permut2Cases(suite, -8, 6);        
 
+        int[] suite = {12, 45, 0, -56, -566};
+
+        Parametrage.permut2Cases(suite, 1, 4);
+        
+        if (suite[1] == -566 && suite[4] == 45) {
+            System.out.println("Succes de Permut2Cases");
+        } else {
+            System.out.println("Echec de Permut2Cases");
+        }
+
+// #test indice incorrect#       Parametrage.permut2Cases(suite, 6, 1);  
     }
-    
+
     /**
      * Lancer les différentes méthodes de tests
      */
     public static void main(String[] args) {
         
 //        testMinimumIntInt();
-//        testAbsolueDouble();
-//        testPermut2Int();
-//        testPermut2IntegerV0();
-//        testPermut2IntegerV1();
-//        testPermut2IntModifiable();
+        testAbsolueDouble();
+        testPermut2Int();
+        testPermut2IntegerV0();
+        testPermut2IntegerV1();
+        testPermut2IntModifiable();
         testPermut2Cases();
+
     }
 }
