@@ -4,8 +4,6 @@
  */
 package info1.methodes;
 
-import org.omg
-
 /**
  * Classe utilitaire.
  * Etude des méthodes en java : paramétrage, convention d'appel...
@@ -87,8 +85,8 @@ public class Parametrage {
 //#ERR#PRIVATE        a.value   = b.value;
 //#ERR#PRIVATE        b.value   = tempo;
 
-        a.intValue() = b.intValue();
-        b.intValue() = tempo;
+       /* a.intValue() = b.intValue();
+        b.intValue() = tempo; */
     }
 
     /**
@@ -96,13 +94,24 @@ public class Parametrage {
      * @param a à permuter avec b
      * @param b à permuter avec a
      */
-     public static void permut2IntModifiable(IntModifiable a, IntModifiable b) {
+    public static void permut2IntModifiable(IntModifiable a, IntModifiable b) {
          
         int tempo = a.getValeur();
 	a.setValeur(b.getValeur());
         b.setValeur(tempo);
-     }
+    }
 
-    
+    /**
+     * Permutation de deux case d'un tableau d'entier
+     * @param tableau à permuter
+     * @param case1 a permuter avec la case2
+     * @param case2 a permuter avec la case1
+     */
+    public static void permut2Cases(int[] tableau, int case1, int case2) {
+        
+        int tempo = tableau[case1];
+	tableau[case1] = tableau[case2];
+	tableau[case2] = tempo;
+    } 
     
 }

@@ -5,6 +5,7 @@
 package info1.methodes.tests;
 
 import info1.methodes.Parametrage;
+import info1.methodes.IntModifiable;
 
 /**
  * Tests unitaires des méthodes de info1.methodes.Parametrage
@@ -114,15 +115,59 @@ public class TestParametrage {
             System.out.println("Echec de Permut2IntegerV1");
         }
     }
+
+    /**
+     * Tests unitaires de Parametrage.permut2IntModifiable(IntModifiable,
+     * IntModifiables)
+     */
+    public static void testPermut2IntModifiable() {
+
+        IntModifiable n,
+                      p;
+
+	n = new IntModifiable(1);
+	p = new IntModifiable(2);
+
+        
+        Parametrage.permut2IntModifiable(n, p);
+
+        if (n.getValeur() == 2 && p.getValeur() == 1) {
+            System.out.println("Succes de Permut2IntModifiableV1");
+        } else {
+            System.out.println("Echec de Permut2IntModifiableV1");
+        }
+    }
+
+    /**
+     * Tests unitaires de Parametrage.permut2Cases()
+     */
+    public static void testPermut2Cases() {
+        
+        int[] suite = {12, 45, 0, -56, -666};
+        
+        Parametrage.permut2Cases(suite, 1, 4);        
+        
+        if (suite[1] == -666 && suite[4] == 45) {
+            System.out.println("Succes de permut2Cases ! Bravot !");
+        } else {
+            System.out.println("Echec de permut2Cases !");
+        }
+	
+        Parametrage.permut2Cases(suite, -8, 6);        
+
+    }
+    
     /**
      * Lancer les différentes méthodes de tests
      */
     public static void main(String[] args) {
         
 //        testMinimumIntInt();
-        testAbsolueDouble();
-        testPermut2Int();
-        testPermut2IntegerV0();
-        testPermut2IntegerV1();
+//        testAbsolueDouble();
+//        testPermut2Int();
+//        testPermut2IntegerV0();
+//        testPermut2IntegerV1();
+//        testPermut2IntModifiable();
+        testPermut2Cases();
     }
 }
